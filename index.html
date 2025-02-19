@@ -44,7 +44,7 @@
 <body>
     <div id="app" class="container">
         <h1>{{ message }}</h1>
-        <button @click="changeMessage">點我改變訊息</button>
+        <button @click="changeMessage">點我打招呼</button>
     </div>
 
     <script>
@@ -53,12 +53,12 @@
         createApp({
             data() {
                 return {
-                    message: "Hello Vue"
+                    message: "哈囉 你好"
                 };
             },
             methods: {
                 changeMessage() {
-                    this.message = "訊息已改變";
+                    this.message = "我是沈郁珊";
                 }
             }
         }).mount("#app");
