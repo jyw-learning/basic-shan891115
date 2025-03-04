@@ -91,6 +91,11 @@ button {
     font-family: 'cwTeXYen', sans-serif;
 }
 
+.button-hover:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
 .about-page {
     display: flex;
     flex-direction: column;
@@ -137,4 +142,9 @@ button {
     padding: 15px 25px;
     margin: 40px 0 30px 0; /* 增加與上下的距離 */
     font-family: 'cwTeXYen', sans-serif;
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }

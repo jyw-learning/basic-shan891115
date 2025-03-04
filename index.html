@@ -13,7 +13,7 @@
         <div v-if="currentPage === 'home'" class="home-page">
             <h1>{{ message }}</h1>
             <a v-if="showLink" @click="switchPage('about')" class="link">➝ 認識我</a>
-            <button @click="changeMessage">點我打招呼</button>
+            <button @click="changeMessage" :class="{ 'button-hover': isButtonHoverable }">點我打招呼</button>
         </div>
 
         <!-- 關於我頁面 -->
@@ -41,13 +41,16 @@
                 return {
                     message: "哈囉 你好",
                     showLink: false,
-                    currentPage: 'home'
+                    currentPage: 'home',
+                    isButtonHoverable: true
                 };
             },
+
             methods: {
                 changeMessage() {
                     this.message = "我是 沈郁珊";
                     this.showLink = true;
+                    this.isButtonHoverable = false;
                 },
                 switchPage(page) {
                     this.currentPage = page;
