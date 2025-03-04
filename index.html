@@ -4,110 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #7dd4ae;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            max-width: 800px;
-            height: 100vh;
-        }
-
-        .home-page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100%;
-        }
-
-        h1 {
-            color: rgb(42, 122, 99);
-            font-size: 100px;
-            margin: 0; /* 移除預設邊距 */
-            text-align: center;
-        }
-
-        h2 {
-            color: rgb(56, 205, 178);
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .link {
-            color: #295157;
-            font-size: 25px;
-            text-decoration: none;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            display: block;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .link:hover {
-            transform: scale(1.05);
-        }
-
-        button {
-            background-color: #399074;
-            border: none;
-            color: white;
-            padding: 30px 30px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 30px;
-            margin-top: 20px; /* 與 h1 之間增加間距 */
-            cursor: pointer;
-            border-radius: 20px;
-        }
-
-        .about-page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            min-height: 100vh; /* 確保頁面至少有 100vh 高度 */
-        }
-
-        .about-text {
-            font-size: 24px;
-            line-height: 1.6;
-            color: #4c3e3e;
-            margin-bottom: 0px;
-        }
-
-        .profile-image {
-            width: 250px; /* 設定圖片寬度 */
-            height: auto; /* 保持圖片比例 */
-            border-radius: 50%; /* 使圖片呈現圓形 */
-            border: 2px solid #92dec6; /* 添加邊框 */
-            margin-bottom: 10px; /* 添加下方間距 */
-            margin-top: 100px; /* 添加上方間距 */
-            object-fit: cover; /* 確保圖片適合容器 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
-        }
-
-        .back-button {
-            background-color: #399074;
-            padding: 15px 25px;
-            margin-bottom: 30px; /* 增加與底部的距離 */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -121,14 +18,16 @@
 
         <!-- 關於我頁面 -->
         <div v-if="currentPage === 'about'" class="about-page">
-            <h2>關於 沈郁珊</h2>
-            <div class="about-text">
-                <img src="images/photo_1.jpg" class="profile-image" alt="沈郁珊的照片">
-                <p>你好！我是沈郁珊。</p>
-                <p>個人介紹：</p>
-                <p>學習經歷：</p>
-                <p>專業技能：</p>
-                <p>興趣愛好：</p>
+            <h2>關於我</h2>
+            <div class="about-card">
+                <div class="about-text">
+                    <img src="images/photo_1.jpg" class="profile-image" alt="沈郁珊的照片">
+                    <p>你好！我是沈郁珊。</p>
+                    <p>中原大學電機系碩二生。</p>
+                    <p>學習經歷：待更新</p>
+                    <p>專業技能：待更新</p>
+                    <p>興趣愛好：待更新</p>
+                </div>
             </div>
             <button @click="switchPage('home')" class="back-button">返回前頁</button>
         </div>
