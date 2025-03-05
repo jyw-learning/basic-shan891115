@@ -11,6 +11,12 @@
     <div id="app" class="container">
         <!-- 首頁內容 -->
         <div v-if="currentPage === 'home'" class="home-page">
+            <div class="navbar">
+                <a href="#">首頁</a>
+                <a href="#">關於我</a>
+                <a href="#">服務</a>
+                <a href="#">聯絡</a>
+            </div>
             <h1>{{ message }}</h1>
             <a v-if="showLink" @click="switchPage('about')" class="link">➝ 認識我</a>
             <button v-if="showButton" @click="changeMessage">點我打招呼</button>
@@ -18,6 +24,12 @@
 
         <!-- 關於我頁面 -->
         <div v-if="currentPage === 'about'" class="about-page">
+            <div class="navbar">
+                <a href="#">首頁</a>
+                <a href="#">關於我</a>
+                <a href="#">服務</a>
+                <a href="#">聯絡</a>
+            </div>
             <h2>關於我</h2>
             <div class="about-card">
                 <div class="about-text">
