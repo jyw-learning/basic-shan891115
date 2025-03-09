@@ -9,14 +9,16 @@
 
 <body>
     <div id="app" class="container">
+        <!-- 導航欄 - 在所有頁面共用 -->
+        <div class="navbar">
+            <a @click="switchPage('home')" :class="{ active: currentPage === 'home' }">首頁</a>
+            <a @click="switchPage('about')" :class="{ active: currentPage === 'about' }">關於我</a>
+            <a @click="switchPage('services')" :class="{ active: currentPage === 'services' }">服務</a>
+            <a @click="switchPage('contact')" :class="{ active: currentPage === 'contact' }">聯絡</a>
+        </div>
+
         <!-- 首頁內容 -->
         <div v-if="currentPage === 'home'" class="home-page">
-            <div class="navbar">
-                <a href="#">首頁</a>
-                <a href="#">關於我</a>
-                <a href="#">服務</a>
-                <a href="#">聯絡</a>
-            </div>
             <h1>{{ message }}</h1>
             <a v-if="showLink" @click="switchPage('about')" class="link">➝ 認識我</a>
             <button v-if="showButton" @click="changeMessage">點我打招呼</button>
@@ -24,12 +26,6 @@
 
         <!-- 關於我頁面 -->
         <div v-if="currentPage === 'about'" class="about-page">
-            <div class="navbar">
-                <a href="#">首頁</a>
-                <a href="#">關於我</a>
-                <a href="#">服務</a>
-                <a href="#">聯絡</a>
-            </div>
             <h2>關於我</h2>
             <div class="about-card">
                 <div class="about-text">
@@ -42,6 +38,25 @@
                 </div>
             </div>
             <button @click="switchPage('home')" class="back-button">返回前頁</button>
+        </div>
+
+        <!-- 服務頁面 -->
+        <div v-if="currentPage === 'services'" class="services-page">
+            <div class="grid-container">
+                <div class="grid-item item1">2 欄 3 列</div>
+                <div class="grid-item item2">2 欄 1 列</div>
+                <div class="grid-item item3">1 欄 2 列</div>
+                <div class="grid-item">1 欄 1 列</div>
+                <div class="grid-item">1 欄 1 列</div>    
+            </div>
+            <button @click="switchPage('about')" class="back-button">返回前頁</button>
+        </div>
+
+        <!-- 聯絡頁面 -->
+        <div v-if="currentPage === 'contact'" class="contact-page">
+            <h2>聯絡我</h2>
+            <p>這裡是聯絡頁面，您可以在這裡放置您的聯絡方式。</p>
+            <button @click="switchPage('services')" class="back-button">返回前頁</button>
         </div>
     </div>
 
@@ -65,7 +80,17 @@
                     this.showButton = false;
                 },
                 switchPage(page) {
+                    // 如果從其他頁面切換到首頁，重置首頁狀態
+                    if (page === 'home' && this.currentPage !== 'home') {
+                        this.resetHomePage();
+                    }
                     this.currentPage = page;
+                },
+                resetHomePage() {
+                    // 重置首頁的所有狀態
+                    this.message = "哈囉 你好";
+                    this.showLink = false;
+                    this.showButton = true;
                 }
             }
         }).mount("#app");

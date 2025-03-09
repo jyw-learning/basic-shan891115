@@ -59,7 +59,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background: #cbf5e8;
-    padding: 15px 0;
+    padding: 10px 0;
     z-index: 1000; /* 確保導覽列在其他元素上方 */
 }
 .navbar a {
@@ -69,6 +69,7 @@ body {
     padding: 10px 20px;
     margin: 0 10px;
     transition: color 0.3s ease;
+    flex-wrap: wrap;
 }
 
 .navbar a:hover {
@@ -190,11 +191,71 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
+.services-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 0 20px;
+    min-height: 620px;
+    width: 100%;
+    flex-grow: 1;
+    min-width: auto; /* Remove fixed min-width */
+    max-width: 1300px; /* Add max-width instead */
+    margin: 0 auto; /* Center the container */
+}
+
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 100px;
+    min-height: 100vh;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+    width: 100%; /* 確保使用父元素的全部寬度 */
+    margin: 0 auto; /* 居中顯示 */
+}
+.grid-item {
+    background: lightblue;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    /*border: 1px solid #3f705a;*/
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(27, 49, 44, 0.5);
+}
+.item1 {
+    grid-row: span 3;
+    grid-column: span 2;
+    background: lightcoral;
+    min-height: 314.8px;
+}
+.item2 {
+    grid-column: span 2;
+    background: lightgreen;
+}
+.item3 {
+    grid-row: span 2;  
+    background: rgb(236, 230, 37);
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: center;
-        font-size: 10px;
+        font-size: 5px;
+        justify-content: space-evenly;
     }
     .navbar a {
         padding: 3px;
@@ -210,6 +271,9 @@ button:hover {
     h2 {
         font-size: 30px;
         margin-top: 190px;
+    }
+    .home-page::after {
+        height: 190px;
     }
     .about-page {
         padding: 10px;
@@ -231,6 +295,30 @@ button:hover {
     .back-button {
         font-size: 16px;
         padding: 10px 20px;
+    }
+
+    .services-page {
+        padding: 10px 10px 30px 10px;
+        margin-top: 50px;
+        min-width: 100px;
+        min-height: 100px;
+    }
+
+    .services-page .back-button {
+        margin-top: 60px; /* 增加按鈕頂部間距 */
+    }
+
+    .contact-page {
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        /*grid-template-rows: repeat(3, 1fr);*/ 
+        grid-template-rows: 3fr 1fr 2fr 1fr 1fr;
+        height: 500px;
+        margin: 130px 0; /* 為按鈕預留空間 */
     }
 
 }
