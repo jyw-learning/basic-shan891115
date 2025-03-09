@@ -43,11 +43,11 @@
         <!-- 服務頁面 -->
         <div v-if="currentPage === 'services'" class="services-page">
             <div class="grid-container">
-                <div class="grid-item item1">2 欄 3 列</div>
-                <div class="grid-item item2">2 欄 1 列</div>
-                <div class="grid-item item3">1 欄 2 列</div>
-                <div class="grid-item">1 欄 1 列</div>
-                <div class="grid-item">1 欄 1 列</div>    
+                <div class="grid-item item1">學習筆記</div>
+                <div class="grid-item item2">課堂範例</div>
+                <div class="grid-item item3">作業一</div>
+                <div class="grid-item">作業二</div>
+                <div class="grid-item">作業三</div>    
             </div>
             <button @click="switchPage('about')" class="back-button">返回前頁</button>
         </div>
@@ -55,7 +55,7 @@
         <!-- 聯絡頁面 -->
         <div v-if="currentPage === 'contact'" class="contact-page">
             <h2>聯絡我</h2>
-            <p>這裡是聯絡頁面，您可以在這裡放置您的聯絡方式。</p>
+            <p>這裡是聯絡頁面，您可以撥打09xx-xxx-xxx來聯絡我。</p>
             <button @click="switchPage('services')" class="back-button">返回前頁</button>
         </div>
     </div>
