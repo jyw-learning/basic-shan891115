@@ -43,7 +43,7 @@
         <!-- 服務頁面 -->
         <div v-if="currentPage === 'services'" class="services-page">
             <div class="grid-container">
-                <div class="grid-item item1">學習筆記</div>
+                <div class="grid-item item1" @click="navigateTo('https://hackmd.io/@Yu-Shan/r1VDBMQqke')">學習筆記</div>
                 <div class="grid-item item2">課堂範例</div>
                 <div class="grid-item item3">作業一</div>
                 <div class="grid-item">作業二</div>
@@ -91,6 +91,9 @@
                     this.message = "哈囉 你好";
                     this.showLink = false;
                     this.showButton = true;
+                },
+                navigateTo(url) {
+                    window.location.href = url;
                 }
             }
         }).mount("#app");

@@ -74,6 +74,7 @@ body {
 
 .navbar a:hover {
     color: #7dd4ae; /* 使用頁面的綠色作為懸停顏色 */
+    cursor: pointer;
 }
 
 h1 {
@@ -229,6 +230,7 @@ button:hover {
     transform: rotate(2deg) scale(1.02);
     font-style: italic;
     color: #399074;
+    cursor: pointer;
 }
 .item1 {
     grid-row: span 3;
