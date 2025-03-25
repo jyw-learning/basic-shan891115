@@ -52,6 +52,7 @@ body {
 
 .navbar {
     position: fixed;
+    z-index: 1000; /* 確保導覽列在其他元素上方 */
     top: 0;
     left: 0;
     width: 100%;
@@ -59,8 +60,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     background: #cbf5e8;
-    padding: 10px 0;
-    z-index: 1000; /* 確保導覽列在其他元素上方 */
+    padding: 10px 0;    
 }
 .navbar a {
     color: #295157;
@@ -177,6 +177,28 @@ button:hover {
     margin-bottom: 20px; /* 添加下方間距 */
     margin-top: 10px; /* 添加上方間距 */
     align-self: center;
+    cursor: pointer;
+}
+.profile-image:hover {
+    transform: rotate(2deg) scale(1.02);
+}
+
+#progress-container {
+    width: 300px; 
+    height: 30px; 
+    background: #ddd; 
+    border-radius: 5px; 
+    overflow: hidden; 
+    margin: 20px auto;
+}
+#progress-bar {
+    width: 0%; 
+    height: 30px; 
+    background: #5fa6a8;
+    text-align: center; 
+    line-height: 30px; 
+    color: white; 
+    font-weight: bold;
 }
 
 .back-button {
@@ -245,6 +267,71 @@ button:hover {
 .item3 {
     grid-row: span 2;  
     background: #f1ccb8;
+}
+
+/* 遮罩背景 */
+.modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+/* 對話框 */
+.modal-box {
+    background: rgb(206, 227, 201);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: auto;
+    max-width: 90%;     /* 防止過寬 */
+    width: auto;        /* 根據內容調整 */
+    max-height: 80vh;   /* 最大高度 */
+}
+.modal-box h3 {
+    font-size: 27px;
+    margin: 0;
+    color: #295157;
+}
+.modal-box h4 {
+    font-size: 20px;
+    margin: 20px 0 0 18px;
+    color: #295157;
+    text-align: left;
+}
+#customAlertAB .modal-box h4 {
+    margin-left: 10px;
+}
+.modal-box p {
+    font-size: 18px;
+    color: #295157;
+    text-align: left;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+/* 顯示時的狀態 */
+.show {
+    visibility: visible;
+    opacity: 1;
+}
+/* 關閉按鈕 */
+.close-btn {
+    font-size: 25px;
+    margin-top: -3px;
+    padding: 8px 15px;
+    background: #3e8b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .contact-page {
@@ -356,6 +443,10 @@ button:hover {
         grid-template-rows: 3fr 1fr 2fr 1fr 1fr;
         height: 500px;
         margin: 130px 0; /* 為按鈕預留空間 */
+    }
+
+    .modal-box {
+        max-width: 80%;
     }
 
 }
