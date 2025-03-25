@@ -241,7 +241,6 @@ button:hover {
     background: #f2debd;
     text-align: center;
     line-height: 100px;
-    font-size: 20px;
     /*border: 1px solid #3f705a;*/
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(27, 49, 44, 0.5);
@@ -286,7 +285,7 @@ button:hover {
 }
 /* 對話框 */
 .modal-box {
-    background: rgb(206, 227, 201);
+    background: #cbf5e8;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -302,7 +301,7 @@ button:hover {
     color: #295157;
 }
 .modal-box h4 {
-    font-size: 20px;
+    font-size: 23px;
     margin: 20px 0 0 18px;
     color: #295157;
     text-align: left;
@@ -311,7 +310,7 @@ button:hover {
     margin-left: 10px;
 }
 .modal-box p {
-    font-size: 18px;
+    font-size: 20px;
     color: #295157;
     text-align: left;
     margin-left: 18px;
@@ -327,7 +326,7 @@ button:hover {
     font-size: 25px;
     margin-top: -3px;
     padding: 8px 15px;
-    background: #3e8b6b;
+    background: #399074;
     color: white;
     border: none;
     cursor: pointer;
