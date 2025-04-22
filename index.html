@@ -32,9 +32,8 @@
                     <img :src="profileImage" class="profile-image" alt="沈郁珊的照片" @click="photoStyleChange">
                     <p>你好！我是沈郁珊。</p>
                     <p>中原大學電機系碩二生。</p>
-                    <p>學習經歷：待更新</p>
-                    <p>專業技能：待更新</p>
-                    <p>興趣愛好：待更新</p>
+                    <p>立志於用上所有課堂知識豐富此網頁。</p>
+                    <p style="color: rgb(44, 141, 104);"> ⚝ 點擊照片有小驚喜 ⚝ </p>
                 </div>    
             </div>
             <div id="customAlertAB" 
@@ -57,7 +56,7 @@
         <div v-if="currentPage === 'services'" class="services-page">
             <div class="grid-container">
                 <div class="grid-item item1" @click="navigateTo('https://hackmd.io/@Yu-Shan/r1VDBMQqke')">學習筆記</div>
-                <div class="grid-item item2">課堂範例</div>
+                <div class="grid-item item2" @click="navigateTo('https://jia-yin.github.io/jywlearn/zh-TW/vue/intro/basic-css.html')">課堂範例</div>
                 <div class="grid-item item3" @click="showCustomAlert">作業一</div>
                 <div class="grid-item" @click="showCustomAlert2">作業二</div>
                 <div class="grid-item" @click="showCustomAlert3">作業三</div>    
@@ -185,7 +184,7 @@
                 },
                 photoStyleChange() {
                     this.showCustomModalAB = true;
-                    let totalSeconds = 15;
+                    let totalSeconds = 10; // 設定總秒數
                     let currentSecond = totalSeconds;
 
                     // 初始化進度條
