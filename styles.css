@@ -232,7 +232,7 @@ button:hover {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(4, 2fr);
-    grid-template-rows: repeat(3, 100px);
+    grid-template-rows: repeat(4, 100px);
     gap: 15px;
     width: 100%; /* 確保使用父元素的全部寬度 */
     margin: 0 auto; /* 居中顯示 */
@@ -260,12 +260,27 @@ button:hover {
     min-height: 314.8px;
 }
 .item2 {
+    grid-row: span 2;
     grid-column: span 2;
     background: #b8f1b8;
 }
 .item3 {
     grid-row: span 2;  
     background: #f1ccb8;
+}
+.item4 {
+    grid-column: span 2;
+    background: #b8dff1;
+}
+/* 新增：作業二位於第三列第四行 */
+.homework2 {
+    grid-row: 3;
+    grid-column: 4;
+}
+/* 新增：作業三位於第四列第四行 */
+.homework3 {
+    grid-row: 4;
+    grid-column: 4;
 }
 
 /* 遮罩背景 */

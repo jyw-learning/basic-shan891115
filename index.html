@@ -58,8 +58,9 @@
                 <div class="grid-item item1" @click="navigateTo('https://hackmd.io/@Yu-Shan/r1VDBMQqke')">學習筆記</div>
                 <div class="grid-item item2" @click="navigateTo('https://jia-yin.github.io/jywlearn/zh-TW/vue/intro/basic-css.html')">課堂範例</div>
                 <div class="grid-item item3" @click="showCustomAlert">作業一</div>
-                <div class="grid-item" @click="showCustomAlert2">作業二</div>
-                <div class="grid-item" @click="showCustomAlert3">作業三</div>    
+                <div class="grid-item item4" @click="navigateTo('https://front-end-final-tawny.vercel.app/')">作品集</div>
+                <div class="grid-item homework2" @click="showCustomAlert2">作業二</div>
+                <div class="grid-item homework3" @click="showCustomAlert3">作業三</div>
             </div>
             <button @click="switchPage('about')" class="back-button">返回前頁</button>
             <div id="customAlert" 
@@ -184,7 +185,7 @@
                 },
                 photoStyleChange() {
                     this.showCustomModalAB = true;
-                    let totalSeconds = 10; // 設定總秒數
+                    let totalSeconds = 5; // 設定總秒數
                     let currentSecond = totalSeconds;
 
                     // 初始化進度條
